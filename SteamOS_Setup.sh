@@ -5,7 +5,7 @@ echo Running Steam Deck automated setup!
 echo "Press CTRL + C to cancel!"
 
 # Count down from 10
-secs=$((10))
+secs=$((5))
 while [ $secs -gt 0 ]; do
    echo -ne "$secs\033[0K\r"
    sleep 1

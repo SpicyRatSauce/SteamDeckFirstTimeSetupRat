@@ -31,7 +31,7 @@ echo "Decky Loader installed!"
 
 # Download and run software install script
 echo "Installing Software!"
-curl https://raw.githubusercontent.com/SpicyRatSauce/SteamDeckFirstTimeSetupRat/1e1b90f2b3af44c64f9c03f396e41a773b035c84/InstallSoftware.sh | bash -s --
+curl https://raw.githubusercontent.com/SpicyRatSauce/SteamDeckFirstTimeSetupRat/main/InstallSoftware.sh | bash -s --
 wait $!
 echo "Software Installed! Setup finished!"
 

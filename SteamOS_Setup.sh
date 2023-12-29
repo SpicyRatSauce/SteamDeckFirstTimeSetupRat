@@ -12,35 +12,6 @@ while [ $secs -gt 0 ]; do
    : $((secs--))
 done
 
-
-# Set root password
-passwd
-expect "New password:" { send "1232\r" }
-expect "Retype new password:" { send "1232\r" }
-# Wait for command to finish
-expect eof
-
-
-# Disable readonly file system
-sudo steamos-readonly disable
-
-
-# Disable wifi power management
-# Edit file if exists or make new one if not
-if test -f /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf; then
-  sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-else
-  sudo echo -e "[connection]\nwifi.powersave = 3" >> /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-fi
-# Restarting Network Manager for changes to take effect
-sudo systemctl restart NetworkManager
-
-echo "Wifi power management disabled"
-
-
-
-
-
 # Download And install Cryoutils
 echo "Downloading & running CryoUtils installer!"
 curl https://raw.githubusercontent.com/CryoByte33/steam-deck-utilities/main/install.sh | bash -s --

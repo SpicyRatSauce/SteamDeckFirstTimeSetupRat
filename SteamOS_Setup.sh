@@ -12,6 +12,31 @@ while [ $secs -gt 0 ]; do
    : $((secs--))
 done
 
+
+# Set root password
+
+passwd
+expect "New password:" { send "1232\r" }
+expect "Retype new password:" { send "1232\r" }
+# Wait for command to finish
+expect eof
+
+
+# Disable readonly file system
+sudo steamos-readonly disable
+
+
+# Disable wifi power management
+if test -f /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf; then
+  sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+else
+  sudo echo -e "[connection]\nwifi.powersave = 3" >> /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+
+sudo systemctl restart NetworkManager
+
+echo "Wifi power management disabled"
+
+
 echo "Starting software install!"
 
 # Install useful software using flatpak
@@ -38,6 +63,7 @@ flatpak install flathub org.kde.krita -y
 flatpak install flathub org.darktable.Darktable -y
 
 echo "Software installed!"
+
 
 
 # Download And install Cryoutils

@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Setup Steam Deck
+Exec=curl https://raw.githubusercontent.com/SpicyRatSauce/SteamDeckFirstTimeSetupRat/d5697c0cf7c5dbd058283d0d94b775582100ca4d/SteamOS_Setup.sh | bash -s --
+Icon=steamdeck-gaming-return
+Terminal=true
+Type=Application
+StartupNotify=false

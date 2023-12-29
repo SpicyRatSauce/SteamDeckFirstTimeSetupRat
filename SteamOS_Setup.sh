@@ -2,11 +2,19 @@
 
 # This Script will preform first time setup on Steam Deck with SteamOS 3.0+
 echo Running Steam Deck automated setup!
-sleep 5
-
-# Make installer scripts able to run!
-chmod +x InstallDeckyLoaderRelease.sh
-chmod +x InstallCryoUtils.sh
+echo "Press CTRL + C to cancel!"
+sleep 10
+echo 10
+echo 9
+echo 8
+echo 7
+echo 6
+echo 5
+echo 4
+echo 3
+echo 2
+echo 1
+echo "Starting software install!"
 
 # Add Flatpak repo to User
 #flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo -y
@@ -30,12 +38,22 @@ flatpak install flathub com.spotify.Client -y
 flatpak install flathub org.kde.krita -y
 flatpak install flathub org.darktable.Darktable -y
 
-cat InstallCryoUtils.sh
-echo Installing CryoUtils!
-sh ./InstallCryoUtils.sh
+echo "Software installed!"
 
-cat InstallDeckyLoaderRelease.sh
-echo Installing DeckyLoader!
-sh ./InstallDeckyLoaderRelease.sh
+
+echo "Downloading & running CryoUtils installer!"
+curl https://raw.githubusercontent.com/CryoByte33/steam-deck-utilities/main/install.sh | bash -s --
+echo "CryoUtils installed!"
+
+echo "Downloading & running Decky Loader installer!"
+curl https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/user_install_script.sh | bash -s --
+echo "Decky Loader installed!"
+
+
+echo "Setup finished, go add desktop programs to Steam by right clicking them in the applications menu (bottom left) and selecting "Add to Steam""
+
+exit O
+
+
 
 

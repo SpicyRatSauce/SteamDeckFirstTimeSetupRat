@@ -46,7 +46,7 @@ curl https://raw.githubusercontent.com/CryoByte33/steam-deck-utilities/main/inst
 echo "CryoUtils installed!"
 
 echo "Downloading & running Decky Loader installer!"
-curl https://github.com/SteamDeckHomebrew/decky-installer/releases/latest/download/user_install_script.sh | bash -s --
+curl https://raw.githubusercontent.com/SteamDeckHomebrew/decky-loader/e3d72b60823014317fe56a51cbfffd4bb7f33453/dist/install_release.sh | bash -s --
 echo "Decky Loader installed!"
 
 

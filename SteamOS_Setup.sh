@@ -42,25 +42,36 @@ echo "Starting software install!"
 # Install useful software using flatpak
 # Basic Utilites
 flatpak install flathub org.mozilla.firefox -y
+expect eof
 flatpak install flathub com.google.Chrome -y
+expect eof
 flatpak install flathub com.github.tchx84.Flatseal -y
+expect eof
 flatpak install flathub it.mijorus.gearlever -y
 
 # Gaming tools
 flatpak install flathub com.github.Matoking.protontricks -y
+expect eof
 flatpak install flathub net.davidotek.pupgui2 -y
+expect eof
 flatpak install flathub org.prismlauncher.PrismLauncher -y
+expect eof
 flatpak install flathub com.heroicgameslauncher.hgl -y
+expect eof
 flatpak install flathub net.lutris.Lutris -y
+expect eof
 flatpak install flathub com.usebottles.bottles -y
 
 # Social & Music
 flatpak install flathub com.discordapp.Discord -y
+expect eof
 flatpak install flathub com.spotify.Client -y
-
+expect eof
 # Photo Editing
 flatpak install flathub org.kde.krita -y
+expect eof
 flatpak install flathub org.darktable.Darktable -y
+expect eof
 
 echo "Software installed!"
 

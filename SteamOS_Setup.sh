@@ -31,6 +31,7 @@ if test -f /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf; then
   sudo sed -i 's/3/2/' /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 else
   sudo echo -e "[connection]\nwifi.powersave = 3" >> /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+fi
 # Restarting Network Manager for changes to take effect
 sudo systemctl restart NetworkManager
 
